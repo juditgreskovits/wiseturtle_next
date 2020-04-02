@@ -1,18 +1,19 @@
 import App from 'next/app';
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { Reset } from 'styled-reset';
 
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-};
+import { theme } from '../components/theme';
+
+const GlobalStyle = createGlobalStyle`${theme.fonts}`;
 
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
       <ThemeProvider theme={theme}>
+        <Reset />
+        <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     );

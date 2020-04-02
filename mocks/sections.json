@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "contact": {
+      "title": "Get in touch with us"
+    },
+    "ourWork": {
+      "title": "Our work",
+      "content": "We design, source and install beautiful and sophisticated kitchens. We focus on the needs, tastes, culinary practices, property specifics and budgets of our customers, be it individual home owners, architects, designers or property developers."
+    },
+    "approach": {
+      "title": "Our approach",
+      "content": [
+        "We take a holistic view of each project going beyond the standard studio practice, ready to meet any special need.",
+        "We help our clients make informed and imaginative choices, resulting in a bespoke and characterful design.",
+        "We create spaces which are both visually pleasing and practical, using clean lines and balanced proportions."
+      ]
+    },
+    "about": {
+      "title": "About us",
+      "content": "Kati after 20 years as a social science researcher, has spent 20 years in the kitchen industry, developing her practice to space design, bedrooms and bathrooms. Her showroom experience gave her a deep insight into high street practice. She regularly visits UK and international trade shows to ensure she is up to date on design trends and technical advances.",
+      "project": {
+        "id": "liverpool-road-n1-2017",
+        "imageIndex": 3
+      }
+    },
+    "howWeWork": {
+      "title": "How we work",
+      "content": "Every client is unique and we aim to match that with our offering. We help clients understand their needs and priorities, find furniture and appliances that match them and manage the project from initial concepts through to the final installations. We welcome challenges and are eager to solve problems. Our value added is creative design based on vast experience, product knowledge, flexibility, and strong design values."
+    },
+    "turtles": {
+      "title": "Why turtles?",
+      "content": "Turtles are associated with wisdom and are symbols of the environment, because of their longevity."
+    },
+    "partners": {
+      "title": "The Creative Hub",
+      "content": "As a member of <a href=\"https://thecreativehub.london/\" target=\"_blank\">The Creative Hub</a> we also offer joint projects with our own architects and interior designers if needed."
+    },
+    "brands": {
+      "title": "Brands we trust",
+      "content": "We import furniture directly from manufacturers, in Italy and Germany and work with local suppliers as well. Our main suppliers include <a href=\"http://www.keysbabo.com\" target=\"_blank\">Key Sbabo</a>, <a href=\"http://www.comprex.it\" target=\"_blank\">Comprex</a>, <a href=\"http://www.schroeder-kuechen.de\" target=\"_blank\">Schroeder Kuechen</a>, <a href=\"https://www.arredo3.com\" target=\"_blank\">Arredo3</a>, <a href=\"http://deseoliving.com\" target=\"_blank\">Deseo</a>. Our furniture portfolio covers the market from the very high-end - bespoke, unique door finishes - to more budget sensitive projects."
+    }
+  }
+}
