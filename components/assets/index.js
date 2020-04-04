@@ -1,19 +1,19 @@
-import styled from "@emotion/styled";
-import { withMargins } from "../layout";
+import styled from 'styled-components';
+import { withMargins } from '../layout';
 
-import { ReactComponent as Logo } from "./logo.svg";
-import { ReactComponent as Facebook } from "./facebook.svg";
-import { ReactComponent as Twitter } from "./twitter.svg";
-import { ReactComponent as LinkedIn } from "./linkedin.svg";
-import { ReactComponent as Houzz } from "./houzz.svg";
-import { ReactComponent as GooglePlus } from "./googleplus.svg";
-import { ReactComponent as Pinterest } from "./pinterest.svg";
-import { ReactComponent as Instagram } from "./instagram.svg";
-import { ReactComponent as LinkArrow } from "./arrow.svg";
-import { ReactComponent as HorizontalWave } from "./wave-horizontal.svg";
-import { ReactComponent as VerticalWave } from "./wave-vertical.svg";
-import { ReactComponent as MenuOpen } from "./menu-open.svg";
-import { ReactComponent as MenuClose } from "./menu-close.svg";
+import Logo from './logo.svg';
+import Facebook from './facebook.svg';
+import Twitter from './twitter.svg';
+import LinkedIn from './linkedin.svg';
+import Houzz from './houzz.svg';
+import GooglePlus from './googleplus.svg';
+import Pinterest from './pinterest.svg';
+import Instagram from './instagram.svg';
+import LinkArrow from './arrow.svg';
+import HorizontalWave from './wave-horizontal.svg';
+import VerticalWave from './wave-vertical.svg';
+import MenuOpen from './menu-open.svg';
+import MenuClose from './menu-close.svg';
 
 const GreyHorizontalWave = styled(HorizontalWave)`
   fill: ${({ theme }) => theme.grey};
@@ -40,5 +40,5 @@ export {
   YellowHorizontalWave,
   VerticalWave,
   MenuOpen,
-  MenuClose
+  MenuClose,
 };

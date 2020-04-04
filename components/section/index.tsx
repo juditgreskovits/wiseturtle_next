@@ -18,6 +18,7 @@ const StyledSectionIntro = styled(P)`
     max-width: 54%;
   }
 `;
+
 export {
   StyledSection as Section,
   StyledHeading as FancyHeading,

@@ -51,7 +51,7 @@ const LayoutContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    ${({ direction }: { direction: 'row' | 'column' }) =>
+    ${({ direction }: { direction?: 'row' | 'column' }) =>
       direction === 'row' &&
       `
       flex-direction: row;

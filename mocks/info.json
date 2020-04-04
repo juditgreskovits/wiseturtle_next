@@ -17,33 +17,36 @@
     "phone": "077 1432 7543",
     "copyright": "Copyright © Wise Turtle Interiors 2019"
   },
-  "social": [{
-    "type": "facebook",
-    "name": "Facebook",
-    "link": "https://www.facebook.com/WiseTurtle-Interiors-980088455344575/timeline/"
-  }, {
-    "type": "twitter",
-    "name": "Twitter",
-    "link": "https://twitter.com/WiseTurtle_UK"
-  }, {
-    "type": "linkedin",
-    "name": "LinkedIn",
-    "link": "https://uk.linkedin.com/in/katibalazs"
-  }, {
-    "type": "houzz",
-    "name": "Houzz",
-    "link": "http://www.houzz.co.uk/pro/katalin-balazs/wiseturtle-interiors"
-  }, {
-    "type": "pinterest",
-    "name": "Pinterest",
-    "link": "https://uk.pinterest.com/wiseturtle_UK/"
-  }, {
-    "type": "instagram",
-    "name": "Instagram",
-    "link": "https://instagram.com/wiseturtle_interiors/"
-  }, {
-    "type": "camden",
-    "name": "Camden",
-    "link": "http://www.camden.org.uk/interior-designers/"
-  }]
+  "social": [
+    {
+      "type": "facebook",
+      "name": "Facebook",
+      "link": "https://www.facebook.com/WiseTurtle-Interiors-980088455344575/timeline/"
+    },
+    {
+      "type": "twitter",
+      "name": "Twitter",
+      "link": "https://twitter.com/WiseTurtle_UK"
+    },
+    {
+      "type": "linkedin",
+      "name": "LinkedIn",
+      "link": "https://uk.linkedin.com/in/katibalazs"
+    },
+    {
+      "type": "houzz",
+      "name": "Houzz",
+      "link": "http://www.houzz.co.uk/pro/katalin-balazs/wiseturtle-interiors"
+    },
+    {
+      "type": "pinterest",
+      "name": "Pinterest",
+      "link": "https://uk.pinterest.com/wiseturtle_UK/"
+    },
+    {
+      "type": "instagram",
+      "name": "Instagram",
+      "link": "https://instagram.com/wiseturtle_interiors/"
+    }
+  ]
 }

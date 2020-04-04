@@ -3,7 +3,9 @@ import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Reset } from 'styled-reset';
 
+import mocks from '../mocks';
 import { theme } from '../components/theme';
+import { Footer } from '../components/footer';
 
 const GlobalStyle = createGlobalStyle`${theme.fonts}`;
 
@@ -15,6 +17,7 @@ export default class MyApp extends App {
         <Reset />
         <GlobalStyle />
         <Component {...pageProps} />
+        <Footer data={mocks} />
       </ThemeProvider>
     );
   }
