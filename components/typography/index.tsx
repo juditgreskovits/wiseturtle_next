@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { withMargins, MarginDescriptor } from '../layout/withMargins';
 import { Theme } from '../theme';
 
-const remcalc = (px: number) => `${px / 16}rem`;
+export const remcalc = (px: number) => `${px / 16}rem`;
 
 interface TextProps {
   theme: Theme;
