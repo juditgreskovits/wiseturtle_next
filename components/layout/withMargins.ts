@@ -8,7 +8,7 @@ interface ResponsiveMargin {
   xl?: number;
 }
 
-type marginValue = number | ResponsiveMargin;
+type marginValue = ResponsiveMargin | number;
 
 type direction = 'top' | 'right' | 'bottom' | 'left';
 

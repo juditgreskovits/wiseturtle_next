@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { withMargins } from './withMargins';
+import { withMargins, MarginDescriptor } from './withMargins';
 import { Theme } from '../theme';
 
 interface Background {
@@ -9,7 +9,13 @@ interface Background {
   };
 }
 
-const Container = styled.div`
+interface ContainerProps {
+  theme: Theme;
+  background?: Background;
+  margin?: MarginDescriptor;
+}
+
+const Container = styled.div<ContainerProps>`
   margin: auto;
   padding-top: 0;
   padding-right: ${({ theme }) => theme.spacing.multiple(4)};
@@ -17,7 +23,7 @@ const Container = styled.div`
   padding-left: ${({ theme }) => theme.spacing.multiple(4)};
   max-width: ${({ theme }) => theme.maxWidth};
 
-  ${({ background, theme }: { background?: Background; theme: Theme }) => {
+  ${({ background, theme }) => {
     if (background) {
       return `background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP88R8AAvUB+VkkrXoAAAAASUVORK5CYII=);
           background-repeat: no-repeat;
@@ -31,7 +37,7 @@ const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding-right: ${({ theme }) => theme.spacing.multiple(10)};
     padding-left: ${({ theme }) => theme.spacing.multiple(10)};
-    ${({ background, theme }: { background?: Background; theme: Theme }) => {
+    ${({ background, theme }) => {
       if (background) {
         return `background-position: ${theme.spacing.multiple(30)} ${
           background.offset && background.offset.top ? theme.spacing.multiple(10) : 0
@@ -47,11 +53,11 @@ const Container = styled.div`
   ${withMargins}
 `;
 
-const LayoutContainer = styled(Container)`
+const LayoutContainer = styled(Container)<{ direction?: 'row' | 'column' }>`
   display: flex;
   flex-direction: column;
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    ${({ direction }: { direction?: 'row' | 'column' }) =>
+    ${({ direction }) =>
       direction === 'row' &&
       `
       flex-direction: row;
@@ -158,6 +164,14 @@ const HomeAboutProjectInfoContainer = styled(`div`)`
   ${withMargins}
 `;
 
+const StyledPictureContainer = styled.div`
+  display: none;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: initial;
+    padding: 72px 112px 72px 0;
+  }
+`;
+
 /* const ContentContainer = styled('div')`
   @media (min-width: ${props => props.theme.breakpoints.sm}) {
     column-count: 2;
@@ -178,6 +192,7 @@ export {
   HomeHeadingContainer,
   HomeAboutProjectInfoContainer,
   withMargins,
+  StyledPictureContainer as AboutPictureContainer,
 };
 
 // export { AboutPictureContainer } from "./about";

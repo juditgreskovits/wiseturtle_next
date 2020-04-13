@@ -46,13 +46,13 @@ const H2 = styled.h2<TextProps>`
   }
 `;
 
-const H3 = styled.h3`
+const H3 = styled.h3<TextProps>`
   ${(props) => heading(props)}
   font-size: ${remcalc(24)};
   line-height: 1.25;
 `;
 
-const P = styled.p`
+const P = styled.p<TextProps>`
   ${(props) => text(props)}
   a {
     color: ${({ theme }) => theme.yellow};

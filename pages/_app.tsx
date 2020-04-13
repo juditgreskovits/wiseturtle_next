@@ -17,8 +17,12 @@ const Header = () => (
     <Logo to="/" />
     <Menu>
       <MenuLink href="/">Home</MenuLink>
-      <MenuLink href="/our-work">Our work</MenuLink>
-      <MenuLink href="/about-us">About us</MenuLink>
+      <MenuLink href="/projects" as="/our-work">
+        Our work
+      </MenuLink>
+      <MenuLink href="/about" as="/about-us">
+        About us
+      </MenuLink>
       <MenuLink href="/contact">Get in touch</MenuLink>
     </Menu>
   </HeaderContainer>
