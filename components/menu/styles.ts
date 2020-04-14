@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { heading, text, remcalc } from '../typography';
-import { MenuOpen, MenuClose } from '../assets';
+import { Logo, MenuOpen, MenuClose } from '../assets';
 
 export const StyledMenuOpen = styled(MenuOpen)`
   width: 24px;
@@ -105,4 +105,28 @@ export const StyledNav = styled.nav<NavProps>`
     position: initial;
     background-color: transparent;
   }
+`;
+
+export const StyledLogo = styled.a`
+  display: inline-flex;
+  align-items: center;
+  margin: ${({ theme }) => `${theme.spacing.multiple(5)} ${theme.spacing.multiple(4)}`};
+  text-decoration: none;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    margin-left: ${({ theme }) => `${theme.spacing.multiple(6)}`};
+    margin-right: ${({ theme }) => `${theme.spacing.multiple(6)}`};
+  }
+`;
+
+export const StyledLogoIcon = styled(Logo)`
+  margin-right: ${({ theme }) => theme.spacing.double};
+  width: 28px;
+  height: 54px;
+`;
+
+export const StyledLogoSpan = styled('span')`
+  color: ${({ theme }) => theme.secondary};
+  font-family: ${({ theme }) => theme.secondaryFont};
+  font-size: 20px;
+  line-height: 1;
 `;

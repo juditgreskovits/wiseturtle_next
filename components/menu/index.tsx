@@ -9,6 +9,9 @@ import {
   StyledMenuLinkItem,
   StyledMenuLinks,
   StyledNav,
+  StyledLogo,
+  StyledLogoIcon,
+  StyledLogoSpan,
 } from './styles';
 
 const MenuButton = ({ open, onClick }: { open: boolean; onClick: (event: MouseEvent<HTMLButtonElement>) => void }) => (
@@ -56,4 +59,17 @@ const Menu = ({ children }: { children: ReactNode[] }) => {
   );
 };
 
-export { MenuLink, Menu };
+const Logo = ({ href, as }: { href: string; as?: string }) => (
+  <Link href={href} as={as}>
+    <StyledLogo href={href}>
+      <StyledLogoIcon />
+      <StyledLogoSpan>
+        Wise Turtle
+        <br />
+        Interiors
+      </StyledLogoSpan>
+    </StyledLogo>
+  </Link>
+);
+
+export { MenuLink, Menu, Logo };
