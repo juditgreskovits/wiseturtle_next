@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { withMargins, MarginDescriptor } from './withMargins';
 import { Theme } from '../theme';
 
-interface Background {
+export interface Background {
   offset?: {
     top?: boolean;
     right?: boolean;
   };
 }
 
-interface ContainerProps {
+export interface ContainerProps {
   theme: Theme;
   background?: Background;
   margin?: MarginDescriptor;
