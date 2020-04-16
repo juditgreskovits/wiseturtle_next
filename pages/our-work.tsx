@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import mocks from '../mocks';
 
 import { Section, SectionIntro } from '../components/section';

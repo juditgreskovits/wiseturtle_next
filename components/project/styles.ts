@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { H2, P, H3, Link } from '../typography';
+import { H2, P, H3 } from '../typography';
 import { LinkArrow, GreyHorizontalWave } from '../assets';
 
 export const StyledProjectCommentHeading = styled(H2)`

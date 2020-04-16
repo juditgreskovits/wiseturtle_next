@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 import { withMargins, MarginDescriptor } from '../layout/withMargins';
 import { Theme } from '../theme';
@@ -64,10 +63,6 @@ const A = styled.a`
   ${(props) => text(props)}
 `;
 
-const StyledLink = styled(Link)`
-  ${(props) => text(props)}
-`;
-
 const Li = styled.li`
   ${(props) => text(props)}
 `;
@@ -77,4 +72,4 @@ const Address = styled.address`
   font-style: normal;
 `;
 
-export { text, heading, H1, H2, H3, P, A, StyledLink as Link, Li, Address };
+export { text, heading, H1, H2, H3, P, A, Li, Address };
