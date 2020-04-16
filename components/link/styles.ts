@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { A } from '../typography';
 import { LinkArrow } from '../assets';
+import { MarginDescriptor } from '../layout/withMargins';
 
-export const StyledLink = styled(A)`
+export const StyledLink = styled(A)<{ margin?: MarginDescriptor }>`
   display: inline-flex;
   align-items: center;
   padding: ${({ theme }) => `${theme.spacing.single} ${theme.spacing.single} ${theme.spacing.single} 0`};

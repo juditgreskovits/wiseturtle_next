@@ -11,7 +11,7 @@ export interface Background {
 
 export interface ContainerProps {
   theme: Theme;
-  background?: Background;
+  background?: boolean | Background;
   margin?: MarginDescriptor;
 }
 
@@ -25,11 +25,12 @@ const Container = styled.div<ContainerProps>`
 
   ${({ background, theme }) => {
     if (background) {
+      const bg = background as Background;
       return `background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP88R8AAvUB+VkkrXoAAAAASUVORK5CYII=);
           background-repeat: no-repeat;
-          background-position: 0 ${background.offset && background.offset.top ? theme.spacing.multiple(10) : 0};
+          background-position: 0 ${bg.offset && bg.offset.top ? theme.spacing.multiple(10) : 0};
           background-size: 100% ${
-            background.offset && background.offset.top ? ` calc(100% - ${theme.spacing.multiple(10)})` : ` 100%`
+            bg.offset && bg.offset.top ? ` calc(100% - ${theme.spacing.multiple(10)})` : ` 100%`
           };`;
     }
   }}
@@ -39,14 +40,13 @@ const Container = styled.div<ContainerProps>`
     padding-left: ${({ theme }) => theme.spacing.multiple(10)};
     ${({ background, theme }) => {
       if (background) {
+        const bg = background as Background;
         return `background-position: ${theme.spacing.multiple(30)} ${
-          background.offset && background.offset.top ? theme.spacing.multiple(10) : 0
+          bg.offset && bg.offset.top ? theme.spacing.multiple(10) : 0
         };
             background-size: calc(100% - ${
-              background.offset && background.offset.right ? theme.spacing.multiple(57) : theme.spacing.multiple(40)
-            }) ${
-          background.offset && background.offset.top ? ` calc(100% - ${theme.spacing.multiple(10)})` : ` 100%`
-        };`;
+              bg.offset && bg.offset.right ? theme.spacing.multiple(57) : theme.spacing.multiple(40)
+            }) ${bg.offset && bg.offset.top ? ` calc(100% - ${theme.spacing.multiple(10)})` : ` 100%`};`;
       }
     }}
   }
@@ -123,7 +123,7 @@ const NotFoundContainer = styled(Container)`
   }
 `;
 
-const FooterLayoutContainer = styled('div')`
+const FooterLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -141,14 +141,14 @@ const FooterLayoutContainer = styled('div')`
   }
 `;
 
-const HalfContainer = styled('div')`
+const HalfContainer = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 50%;
   }
   ${withMargins}
 `;
 
-const HomeHeadingContainer = styled(`div`)`
+const HomeHeadingContainer = styled.div<ContainerProps>`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     position: absolute;
     top: calc(50% - 52px);
@@ -157,7 +157,7 @@ const HomeHeadingContainer = styled(`div`)`
   ${withMargins}
 `;
 
-const HomeAboutProjectInfoContainer = styled(`div`)`
+const HomeAboutProjectInfoContainer = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     margin-left: 25%;
   }

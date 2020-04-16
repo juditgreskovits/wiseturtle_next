@@ -2,6 +2,7 @@
 
 - tidy up types - do we store them in the same place?
 - disable scrolling when the mobnile menu is open
+- our work menu to highlight for project
 - 404 for dynamic routes
 
 - update text - do we need to remove refences to The Creative Hub? How about suppliers?

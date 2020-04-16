@@ -12,7 +12,9 @@ class NotFound extends React.PureComponent {
         <NotFoundContainer>
           <H1 margin={{ bottom: { xs: 4.5, md: 3 } }}>404</H1>
           <P>There's nothing to see here</P>
-          <ArrowLink href="/">Home</ArrowLink>
+          <ArrowLink href="/" margin={{ bottom: { xs: 11 } }}>
+            Home
+          </ArrowLink>
         </NotFoundContainer>
       </Section>
     );

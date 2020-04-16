@@ -18,11 +18,11 @@ import { ProjectData } from '../types';
 
 interface ProjectListProps {
   limit?: number;
-  background: Background;
-  margin: MarginDescriptor;
+  background?: boolean | Background;
+  margin?: MarginDescriptor;
 }
 
-const ProjectList = ({ limit, ...rest }: ProjectListProps) => {
+export const ProjectList = ({ limit, ...rest }: ProjectListProps) => {
   const { projects, order } = mocks.projects;
   const orderedProjects = order && order.length ? order.map((id) => projects.find((p) => p.id === id)) : projects;
 

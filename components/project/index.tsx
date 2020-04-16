@@ -49,6 +49,7 @@ export {
   StyledGalleryItem as GalleryItem,
   GalleryItemIndex,
   StyledProjectInfoHeading as ProjectInfoHeading,
+  StyledProjectInfoLink as ProjectInfoLink,
   StyledProjectInfoHorizontalWave as ProjectInfoHorizontalWave,
   StyledProjectInfoP as ProjectInfoP,
   YellowHorizontalWave as ProjectHorizontalWave,
