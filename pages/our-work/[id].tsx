@@ -13,6 +13,7 @@ import {
   GalleryItem,
   GalleryItemIndex,
 } from '../../components/project';
+import NotFound from '../404';
 
 import { ProjectData, ImageData } from '../../types';
 
@@ -23,6 +24,9 @@ const Project = () => {
     return null;
   }
   const project: ProjectData = mocks.projects.projects.find(({ id }) => id === projectId) as ProjectData;
+  if (!project) {
+    return <NotFound />;
+  }
   const images: ImageData[] = project.images;
 
   const total = images.length;

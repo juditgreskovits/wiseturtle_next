@@ -20,7 +20,7 @@ const MenuButton = ({ open, onClick }: { open: boolean; onClick: (event: MouseEv
 
 const MenuLink = ({ children, href, as }: { children: ReactNode; href: string; as?: string }) => {
   const router = useRouter();
-  const active = router.asPath === href;
+  const active = href === '/' ? router.pathname === '/' : router.pathname.includes(href);
 
   return (
     <StyledMenuLinkItem>
