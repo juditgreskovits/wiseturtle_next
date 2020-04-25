@@ -1,6 +1,7 @@
 import React from 'react';
-import mocks from '../mocks';
+import { GetServerSideProps } from 'next';
 
+import { fetchData, useStore } from '../utils';
 import { Section, SectionIntro } from '../components/section';
 import { LayoutContainer, ProjectInfosContainer, Background } from '../components/layout';
 import { MarginDescriptor } from '../components/layout/withMargins';
@@ -14,16 +15,17 @@ import {
   ArrowP,
 } from '../components/project';
 
-import { ProjectData } from '../types';
+import { ProjectsData, ProjectData, Data } from '../types';
 
 interface ProjectListProps {
+  projectsData: ProjectsData;
   limit?: number;
   background?: boolean | Background;
   margin?: MarginDescriptor;
 }
 
-export const ProjectList = ({ limit, ...rest }: ProjectListProps) => {
-  const { projects, order } = mocks.projects;
+export const ProjectList = ({ projectsData, limit, ...rest }: ProjectListProps) => {
+  const { projects, order } = projectsData;
   const orderedProjects = order && order.length ? order.map((id) => projects.find((p) => p.id === id)) : projects;
 
   const projectInfos = orderedProjects.reduce((projectInfos, project, index) => {
@@ -52,14 +54,29 @@ export const ProjectList = ({ limit, ...rest }: ProjectListProps) => {
   return <ProjectInfosContainer {...rest}>{projectInfos}</ProjectInfosContainer>;
 };
 
-const Projects = () => (
-  <Section>
-    <LayoutContainer>
-      <H1 margin={{ top: { xs: 7, md: 11 }, bottom: { xs: 3 } }}>{mocks.sections.ourWork.title}</H1>
-      <SectionIntro margin={{ bottom: { xs: 11, md: 14 } }}>{mocks.sections.ourWork.content}</SectionIntro>
-    </LayoutContainer>
-    <ProjectList background={{ offset: { top: true } }} margin={{ bottom: { sm: 20 } }} />
-  </Section>
-);
+const Projects = ({ data }: { data: Data }) => {
+  const { store } = useStore(data);
+  if (!store) {
+    return <p>NO DATA</p>;
+  }
+  return (
+    <Section>
+      <LayoutContainer>
+        <H1 margin={{ top: { xs: 7, md: 11 }, bottom: { xs: 3 } }}>{store.sections.ourWork.title}</H1>
+        <SectionIntro margin={{ bottom: { xs: 11, md: 14 } }}>{store.sections.ourWork.content}</SectionIntro>
+      </LayoutContainer>
+      <ProjectList
+        projectsData={store.projects}
+        background={{ offset: { top: true } }}
+        margin={{ bottom: { sm: 20 } }}
+      />
+    </Section>
+  );
+};
 
 export default Projects;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data, error } = await fetchData();
+  return { props: { data } };
+};

@@ -13,3 +13,47 @@ export interface ProjectData {
   comment?: string;
   images: ImageData[];
 }
+
+export interface ProjectsData {
+  projects: ProjectData[];
+  order: string[];
+}
+
+export interface ProjectRefData {
+  id: string;
+  imageIndex: number;
+}
+
+export interface TitlesData {
+  title: string;
+  subtitle: string;
+  project: ProjectRefData;
+}
+
+export interface ApproachSectionData {
+  title: string;
+  content: string[];
+}
+
+export interface AboutSectionData {
+  title: string;
+  content: string;
+  project?: ProjectRefData;
+}
+
+export interface SectionData {
+  title: string;
+  content?: string | string[];
+}
+
+export interface SectionsData {
+  about: AboutSectionData;
+  approach: ApproachSectionData;
+  [section: string]: SectionData;
+}
+
+export interface Data {
+  titles: TitlesData;
+  projects: ProjectsData;
+  sections: SectionsData;
+}
